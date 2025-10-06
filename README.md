@@ -1,38 +1,51 @@
-# TSDB Simulation with QuestDB
+# 🚀 การจำลอง TSDB ด้วย QuestDB
 
-This repository contains a Python-based simulation of MT5 positions (buy/sell) for multiple symbols (EURUSD, GBPUSD, XAUUSD) that are sent to QuestDB using **line protocol** with **multipart/form-data**.
+[![Python](https://img.shields.io/badge/Python-3.9+-blue)](https://www.python.org/) 
+[![QuestDB](https://img.shields.io/badge/QuestDB-1.0+-green)](https://questdb.io/)
 
-The simulation supports **multi-threading** to simulate multiple symbols concurrently.
+โปรเจกต์นี้เป็นการจำลอง **MT5 positions** (Buy/Sell) สำหรับหลายสัญลักษณ์ เช่น EURUSD, GBPUSD, XAUUSD ไปยัง **QuestDB** โดยใช้ **line protocol** และ **multipart/form-data**  
+
+รองรับ **multi-threading** เพื่อจำลองหลายสัญลักษณ์พร้อมกันแบบเรียลไทม์
 
 ---
 
-## Demo
+## 📸 ตัวอย่าง
 
 ![Peeraphat361](Peeraphat361.png)
 
 ---
 
-## Features
+## 🔹 ตารางสัญลักษณ์ที่จำลอง
 
-- Multi-threaded simulation of MT5 positions
-- Supports multiple currency/gold symbols
-- Sends positions to QuestDB in real-time
-- Uses `multipart/form-data` for HTTP ingestion (required by QuestDB)
+| สัญลักษณ์ | คำอธิบาย             |
+|------------|---------------------|
+| EURUSD     | Forex คู่ยูโร/ดอลลาร์ |
+| GBPUSD     | Forex คู่ปอนด์/ดอลลาร์ |
+| XAUUSD     | ทองคำ/ดอลลาร์สหรัฐ   |
 
 ---
 
-## Requirements
+## ✨ ฟีเจอร์
+
+- จำลอง MT5 positions แบบหลาย thread
+- รองรับหลายสัญลักษณ์ (Forex / Gold)
+- ส่งข้อมูล positions แบบเรียลไทม์ไปยัง QuestDB
+- ใช้ `multipart/form-data` สำหรับ HTTP ingestion (จำเป็นสำหรับ QuestDB)
+
+---
+
+## ⚙️ สิ่งที่ต้องติดตั้ง
 
 - Python 3.9+
-- `requests` library
-- QuestDB running on `http://localhost:9000`
+- ไลบรารี `requests` (`pip install requests`)
+- QuestDB รันบน `http://localhost:9000`
 
 ---
 
-## Usage
+## 📝 วิธีใช้งาน
 
-1. Make sure QuestDB is running.
-2. Create the table in QuestDB:
+1. รัน QuestDB ให้พร้อมใช้งาน
+2. สร้างตารางใน QuestDB:
 
 ```sql
 CREATE TABLE positions (
